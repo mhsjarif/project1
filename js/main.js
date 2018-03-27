@@ -127,6 +127,7 @@ function render() {
         winAlert.textContent = 'nothing for you T_T';
     } 
 }
+console.log('hi');
 
 //play random gif(or like sprites?) of slot reels spinning//
 //!!time this out for 2 sec each!!! randomize board state from the 12 values//
