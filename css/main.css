@@ -1,0 +1,18 @@
+* {
+    background-color: peachpuff;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 20px;
+
+}
+
+td {
+    font-size: 60px;
+    border: 2px solid black;
+    padding: 0;
+    height: 90px;
+    width: 90px;
+    text-align: center;
+}
