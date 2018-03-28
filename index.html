@@ -1,27 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script defer src="./js/main.js"></script>
     <link rel="stylesheet" href="./css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Patrick+Hand+SC|Fredericka+the+Great|Londrina+Sketch|Luckiest+Guy" rel="stylesheet">
+
     <title>Slot Machine</title>
 </head>
+
 <body>
     <h1>Slot Machine</h1>
-    <h4>$2 to play (=ↀωↀ=)✧</h4>
-    <h5 id="winAlert"></h5>
-    <table>
-        <tr>
-            <td id="td1"></td>
-            <td id="td2"></td>
-            <td id="td3"></td>
-        </tr>
-    </table>
-    <div id="display"></div>
-    <button id="play">play</button>
-    <button id="cash">cash out</button>
-    
+    <div id='slot-machine'>
+        <h4>★·.·´¯`·.·★Only $2 to play!★·.·´¯`·.·★</h4>
+        <h5 id="winAlert">Try your luck!</h5>
+        <table id="slots">
+            <tr>
+                <td id="td1"></td>
+                <td id="td2"></td>
+                <td id="td3"></td>
+            </tr>
+        </table>
+
+        <div id="display"></div>
+
+        <button id="cash">cash out</button>
+        <button id="play">play</button>
+
+    </div>
+    <div id="rules">
+        <h3>Double = 2x &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FULL match = 3x</h3>
+        <table id="rules-display">
+            <tr>
+                <td class="name-tds">Popsicle</td>
+                <td class="name-tds">Ice Cream</td>
+                <td class="name-tds">Dog</td>
+                <td class="name-tds">Cat</td>
+                <td class="name-tds">Cool Cat</td>
+                <td class="name-tds">Unicorn</td>
+            </tr>
+            <tr>
+                <td class="icon-td" id="popsicle-td"></td>
+                <td class="icon-td" id="icecream-td"></td>
+                <td class="icon-td" id="dog-td"></td>
+                <td class="icon-td" id="cat-td"></td>
+                <td class="icon-td" id="coolcat-td"></td>
+                <td class="icon-td" id="unicorn-td"></td>
+            </tr>
+            <tr>
+                <td class="price-tds">$1</td>
+                <td class="price-tds">$2</td>
+                <td class="price-tds">$2</td>
+                <td class="price-tds">$3</td>
+                <td class="price-tds">$4</td>
+                <td class="price-tds">$10</td>
+            </tr>
+        </table>
+    </div>
 </body>
+
 </html>

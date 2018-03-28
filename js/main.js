@@ -9,27 +9,27 @@ var money;
 var display; 
 
 var symArr = [
-        {symbol: 'jackpot0',
+        {symbol: 'UNICORN',
          value: 10,
          imgUrl: 'https://image.flaticon.com/icons/svg/616/616462.svg'
         },
-        {symbol: 'coolcat1',
+        {symbol: 'COOL CAT',
          value: 4,
-         imgUrl: 'https://cdn.iconscout.com/public/images/icon/premium/png-512/cat-pet-animal-domestic-feline-sunglasses-disguise-incognito-tie-formal-official-bodyguard-spy-3a683f7c4cd93367-512x512.png'
+         imgUrl: 'https://image.flaticon.com/icons/png/512/252/252208.png'
         },
-        {symbol: 'cat2',
+        {symbol: 'CAT',
          value: 3,
-         imgUrl: 'https://image.flaticon.com/icons/svg/12/12160.svg'
+         imgUrl: 'http://www.iconarchive.com/download/i78374/iconka/meow/cat-purr.ico'
         },
-        {symbol: 'dog3',
+        {symbol: 'DOG',
          value: 2,
          imgUrl: 'https://image.flaticon.com/icons/png/512/616/616408.png'
         },
-        {symbol: 'iceCream4',
+        {symbol: 'ICE CREAM',
          value: 2,
-         imgUrl: 'https://cdn.vectorstock.com/i/1000x1000/78/37/ice-cream-with-kawaii-face-design-vector-10657837.jpg'
+         imgUrl: 'https://image.flaticon.com/icons/svg/786/786894.svg'
         },
-        {symbol: 'popsicle5',
+        {symbol: 'POPSICLE',
          value: 1,
          imgUrl: 'https://image.flaticon.com/icons/svg/284/284763.svg'
         },
@@ -62,6 +62,7 @@ var winAlert = document.getElementById('winAlert');
 var td1 = document.getElementById('td1');
 var td2 = document.getElementById('td2');
 var td3 = document.getElementById('td3');
+var defaultImg = 'https://image.flaticon.com/icons/svg/258/258349.svg';
 
 /*----- event listeners -----*/
 playButton.addEventListener('click', handleClick);
@@ -78,6 +79,9 @@ function initialize() {
     slotState = [null, null, null];
     money = 10;
     display.textContent = 'Balance: $' + money;
+    td1.style.background = 'url(' + defaultImg + ')';
+    td2.style.background = 'url(' + defaultImg + ')';
+    td3.style.background = 'url(' + defaultImg + ')';
 }
 /// set slot machine visual contents to blank //
 
@@ -90,7 +94,7 @@ function handleClick() {
         slotState[2] = symArr[weight[getRandomIndex(weight.length)]];
         // var randomSymbolValue = randomSymbol.value;
         //console.log(slotState);
-    } else {alert('yous a broke bloke')}
+    } else {document.querySelector('h4').textContent = '★·.·´¯`·.·★Insufficent funds★·.·´¯`·.·★'}
     render();
 }
 
@@ -106,13 +110,12 @@ function cashClick() {
 }
 
 function render() {
-    display.textContent = 'Balance: $' + money;
     console.log(slotState[0], slotState[1], slotState[2])
     td1.style.background = 'url(' + slotState[0].imgUrl + ')';
-    td1.style.background = 'url(' + slotState[0].imgUrl + ')';
     td2.style.background = 'url(' + slotState[1].imgUrl + ')';
+    td3.style.background = 'url(' + slotState[2].imgUrl + ')';
+    td1.style.backgroundSize = 'cover';
     td2.style.backgroundSize = 'cover';
-    td3.style.backgroundSize = 'cover';
     td3.style.backgroundSize = 'cover';
     if (slotState[0] === slotState[1] && slotState[1] ===slotState[2]) {
         money += 3 * slotState[0].value;
@@ -124,10 +127,11 @@ function render() {
         money += 2 * slotState[1].value;
         winAlert.textContent = 'you got a double ' + slotState[1].symbol + ' match!';
     } else {
-        winAlert.textContent = 'nothing for you T_T';
+        winAlert.textContent = 'nothing for you ●﹏●';
     } 
+    display.textContent = 'Balance: $' + money;
 }
-console.log('hi');
+
 
 //play random gif(or like sprites?) of slot reels spinning//
 //!!time this out for 2 sec each!!! randomize board state from the 12 values//
