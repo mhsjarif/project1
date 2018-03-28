@@ -102,7 +102,7 @@ function cashClick() {
 }
 
 function render() {
-    console.log(slotState[0], slotState[1], slotState[2])
+    console.log(slotState[0], slotState[1], slotState[2], "blah")
     td1.style.background = 'url(' + slotState[0].imgUrl + ')';
     td2.style.background = 'url(' + slotState[1].imgUrl + ')';
     td3.style.background = 'url(' + slotState[2].imgUrl + ')';
