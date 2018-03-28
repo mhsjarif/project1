@@ -60,7 +60,7 @@ td {
     width: 300px;
     height: 20px;
     background-color: peachpuff;
-    border: 4px dotted purple;
+    border: 6px dotted #BC9CDA;
     border-bottom: 0;
     padding: 10px;
     border-radius: 15px 15px 0 0;
@@ -75,7 +75,7 @@ td {
     width: 300px;
     height: 20px;
     background-color: peachpuff;
-    border: 4px dotted purple;
+    border: 6px dotted #BC9CDA;
     border-top: 0;
     padding: 10px;
     border-radius: 0 0 15px 15px;

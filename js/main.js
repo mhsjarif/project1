@@ -33,24 +33,6 @@ var symArr = [
          value: 1,
          imgUrl: 'https://image.flaticon.com/icons/svg/284/284763.svg'
         },
-        // {symbol: 'cake6',
-        //  value: 10
-        // },
-        // {symbol: 'pizza7',
-        //  value: 10
-        // },
-        // {symbol: 'taco8',
-        //  value: 10
-        // },
-        // {symbol: 'boba9',
-        //  value: 10
-        // },
-        // {symbol: 'heart10',
-        //  value: 5
-        // },
-        // {symbol: 'star11',
-        //  value: 5
-        // } 
 ]
 
 
@@ -89,12 +71,18 @@ function initialize() {
 function handleClick() {
     if (money >= 2) {
         money -= 2;
+        // setInterval(flash, 1000);
+        // console.log(symArr[getRandomIndex(symArr.length - 1)].imgUrl);
+        // function flash() {
+        //     td1.style.background = 'url(' + symArr[getRandomIndex(symArr.length - 1).imgUrl] + ')';
+        //     td2.style.background = 'url(' + symArr[getRandomIndex(symArr.length - 1).imgUrl] + ')';
+        //     td3.style.background = 'url(' + symArr[getRandomIndex(symArr.length - 1).imgUrl] + ')';
+        // }
         slotState[0] = symArr[weight[getRandomIndex(weight.length)]];
         slotState[1] = symArr[weight[getRandomIndex(weight.length)]];
         slotState[2] = symArr[weight[getRandomIndex(weight.length)]];
         // var randomSymbolValue = randomSymbol.value;
-        //console.log(slotState);
-    } else {document.querySelector('h4').textContent = '★·.·´¯`·.·★Insufficent funds★·.·´¯`·.·★'}
+        } else {document.querySelector('h4').textContent = '★·.·´¯`·.·★Insufficent funds★·.·´¯`·.·★'}
     render();
 }
 
