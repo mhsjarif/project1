@@ -78,12 +78,16 @@ function handleClick() {
         //     td2.style.background = 'url(' + symArr[getRandomIndex(symArr.length - 1).imgUrl] + ')';
         //     td3.style.background = 'url(' + symArr[getRandomIndex(symArr.length - 1).imgUrl] + ')';
         // }
-        slotState[0] = symArr[weight[getRandomIndex(weight.length)]];
+        
         slotState[1] = symArr[weight[getRandomIndex(weight.length)]];
         slotState[2] = symArr[weight[getRandomIndex(weight.length)]];
         // var randomSymbolValue = randomSymbol.value;
         } else {document.querySelector('h4').textContent = '★·.·´¯`·.·★Insufficent funds★·.·´¯`·.·★'}
     render();
+}
+
+function workSlot1() {
+    slotState[0] = symArr[weight[getRandomIndex(weight.length)]];
 }
 
 function getRandomIndex(max) {
