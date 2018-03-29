@@ -31,6 +31,9 @@ h1 {
     margin: 0 auto;
     font-family: 'Luckiest Guy', cursive;
     font-size: 50px;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: black;
+    color: lightpink;
 }
 
 h4 {
@@ -43,6 +46,7 @@ h4 {
 }
 
 td {
+    background-size: cover;
     font-size: 60px;
     border: 2px solid black;
     padding: 0;
@@ -70,7 +74,7 @@ td {
 #display {
     font-family: 'Luckiest Guy', cursive;
     text-align: center;
-    font-size: 20px;
+    font-size: 24px;
     margin: 0 auto;
     width: 300px;
     height: 20px;
@@ -79,6 +83,9 @@ td {
     border-top: 0;
     padding: 10px;
     border-radius: 0 0 15px 15px;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: black;
+    color: lightpink;
 }
 #cash {
     float: left;
@@ -95,6 +102,7 @@ td {
     border-radius: 15px;
     box-shadow: 0 9px #999;
     font-family: 'Londrina Sketch', cursive;
+    font-weight: 900;
     margin-top: -5%;
     margin-left: 15px;
 
@@ -125,6 +133,7 @@ td {
     border-radius: 15px;
     box-shadow: 0 9px #999;
     font-family: 'Londrina Sketch', cursive;
+    font-weight: 900;
     margin-top: -5%;
     margin-right: 15px;
 
@@ -219,4 +228,8 @@ h3 {
     border-radius: 10px;
     font-family: 'Patrick Hand SC';
     background-color: #f0fa99;
+}
+
+audio {
+    width: 65px;
 }
