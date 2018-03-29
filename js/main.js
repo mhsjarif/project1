@@ -90,12 +90,6 @@ function handleClick() {
         for (var i = 0; i < 3; i++) {
             slotState[i] = symArr[weight[getRandomBetween(0, weight.length - 1)]];
         }
-        // setTimeout(function() {
-        // for (var i = 0; i < 3; i++) {
-        //     slotState[i] = symArr[weight[getRandomBetween(0, weight.length - 1)]];
-        // renderSlot(i, 500 + i * 500);
-        // }
-        // }, numFlashes * flashDuration - 1000);
         doFlashing(slotState);
     } else {
         document.querySelector('h4').textContent = '★·.·´¯`·.·★Insufficent funds★·.·´¯`·.·★';
@@ -114,38 +108,17 @@ function renderSlot(slotIdx, timeout) {
 function doFlashing(slots) {
     var timerIdArr = [];
     for(i = 0; i < 3; i++) {
+        let ii = i;
         timerIdArr.push(setInterval(function() {
         var count = 0;
         var startSlot = 0;
         var slotIdx = getRandomBetween(startSlot, 2);
         var symIdx = getRandomBetween(0, symArr.length - 1);
-        console.log(i);
-        reels[i].style.background = 'url(' + symArr[symIdx].imgUrl + ')';
-        reels[i].style.backgroundSize = 'cover';
-        //console.log(i);
+        console.log(ii);
+        reels[ii].style.background = 'url(' + symArr[symIdx].imgUrl + ')';
+        reels[ii].style.backgroundSize = 'cover';
     }, 70))
 }
-    // var timerId = setInterval(function () {
-    //     var slotIdx = getRandomBetween(startSlot, 2);
-    //     var symIdx = getRandomBetween(0, symArr.length - 1);
-    //     reels[0].style.background = 'url(' + symArr[symIdx].imgUrl + ')';
-    //     reels[0].style.backgroundSize = 'cover';
-    // }, 70);
-    // var timerIdB = setInterval(function () {
-    //     var slotIdx = getRandomBetween(startSlot, 2);
-    //     var symIdx = getRandomBetween(0, symArr.length - 1);
-    //     reels[1].style.background = 'url(' + symArr[symIdx].imgUrl + ')';
-    //     reels[1].style.backgroundSize = 'cover';
-    // }, 70);
-    // var timerIdC = setInterval(function () {
-    //     var slotIdx = getRandomBetween(startSlot, 2);
-    //     var symIdx = getRandomBetween(0, symArr.length - 1);
-    //     reels[2].style.background = 'url(' + symArr[symIdx].imgUrl + ')';
-    //     reels[2].style.backgroundSize = 'cover';
-    // }, 70);
-
-
-    //var timerIdArr = [timerId, timerIdB, timerIdC];
     console.log(arguments);
     var args = arguments[0];
     for (var i = 0; i <= 2; i++) {
