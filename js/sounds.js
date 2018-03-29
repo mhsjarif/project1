@@ -4,4 +4,5 @@ var slotSound = new Audio("./media/slotmachine.mp3");
 slotSound.volume = .3;
 var pullingSound = new Audio("./media/newPull.mp3");
 pullingSound.volume = 1;
+var yaySound = new Audio("./media/yay.mp3");
 
