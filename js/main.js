@@ -83,6 +83,7 @@ function initialize() {
 function handleClick() {
     if (money >= 2) {
         money -= 2;
+        yaySound.pause();
         pullingSound.play();
         setTimeout(function () {
             slotSound.play();
@@ -149,16 +150,18 @@ function cashClick() {
 function render() {
     console.log(slotState[0], slotState[1], slotState[2])
     if (slotState[0] === slotState[1] && slotState[1] === slotState[2]) {
-        money += 3 * slotState[0].value;
+        money += 4 * slotState[0].value;
         winAlert.textContent = 'you got a FULL ' + slotState[0].symbol + ' match!';
-        yaySound.play();
+        wowSound.play();
     } else if (slotState[0] === slotState[1] || slotState[0] === slotState[2]) {
         money += 2 * slotState[0].value;
         winAlert.textContent = 'you got a double ' + slotState[0].symbol + ' match!';
+        yaySound.currentTime = 0;
         yaySound.play();
     } else if (slotState[1] === slotState[2]) {
         money += 2 * slotState[1].value;
         winAlert.textContent = 'you got a double ' + slotState[1].symbol + ' match!';
+        yaySound.currentTime = 0;
         yaySound.play();
     } else {
         winAlert.textContent = 'nothing for you ●﹏●';
