@@ -36,9 +36,11 @@ var symArr = [
         },
 ];
 var sounds = [
-    {name: 'lose',
+    {name: 'loseSound',
      soundUrl: './media/loser.mp3'
-    }
+    },
+    {name: 'playSound',
+     soundUrl: ''}
 ]
 
 /*----- cached element references -----*/
@@ -82,7 +84,7 @@ function handleClick() {
                 // renderSlot(i, 500 + i * 500);
             // }
             // }, numFlashes * flashDuration - 1000);
-            doFlashing(slotState[0], slotState[1], slotState[2]);
+            doFlashing(slotState);
     } else {
         document.querySelector('h4').textContent = '★·.·´¯`·.·★Insufficent funds★·.·´¯`·.·★';
     }
@@ -96,9 +98,10 @@ function renderSlot(slotIdx, timeout) {
     }, timeout);
 }
 
-function doFlashing(a, b, c) {
+function doFlashing(slots) {
     var count = 0;
     startSlot = 0;
+    
     // var timerId = setInterval(function() {
     //     var slotIdx = getRandomBetween(startSlot, 2);
     //     var symIdx = getRandomBetween(0, symArr.length - 1);
@@ -130,22 +133,44 @@ function doFlashing(a, b, c) {
         reels[2].style.background = 'url(' + symArr[symIdx].imgUrl + ')';
         reels[2].style.backgroundSize = 'cover';
     }, 70);
+    var timerIds = [timerId, timerIdB, timerIdC];
+    console.log(arguments);
+    var args = arguments[0];
+    for (var i = 0; i <= 2; i++) {
+        // console.log(i)
+        (function(ind) {
+            setTimeout(function() {
+                clearInterval(timerIds[ind]);
+                reels[ind].style.background = 'url(' + args[ind].imgUrl + ')';
+                reels[ind].style.backgroundSize = 'cover';
+            }, ((ind * 1000) + 1000))
+        })(i)
+        // setTimeout(function() {
+        //     clearInterval(timerIds[i]);
+        //         console.log(i)
+        //     reels[i].style.background = 'url(' + a.imgUrl + ')';
+        //     reels[i].style.backgroundSize = 'cover';
+        // }, ((i * 1000) + 1000))
+    }
+
+    // setTimeout(function() {
+    //     clearInterval(timerId);
+    //     reels[0].style.background = 'url(' + a.imgUrl + ')';
+    //     reels[0].style.backgroundSize = 'cover';
+    // }, 1000)
+    // setTimeout(function() {
+    //     clearInterval(timerIdB);
+    //     reels[1].style.background = 'url(' + b.imgUrl + ')';
+    //     reels[1].style.backgroundSize = 'cover';
+    // }, 2000)
+    // setTimeout(function() {
+    //     clearInterval(timerIdC);
+    //     reels[2].style.background = 'url(' + c.imgUrl + ')';
+    //     reels[2].style.backgroundSize = 'cover';
     setTimeout(function() {
-        clearInterval(timerId);
-        reels[0].style.background = 'url(' + a.imgUrl + ')';
-        reels[0].style.backgroundSize = 'cover';
-    }, 1000)
-    setTimeout(function() {
-        clearInterval(timerIdB);
-        reels[1].style.background = 'url(' + b.imgUrl + ')';
-        reels[1].style.backgroundSize = 'cover';
-    }, 2000)
-    setTimeout(function() {
-        clearInterval(timerIdC);
-        reels[2].style.background = 'url(' + c.imgUrl + ')';
-        reels[2].style.backgroundSize = 'cover';
         render();
-    }, 3000)
+    }, 3000);
+    // }, 3000)
 }
 
 function getRandomBetween(min, max) {
@@ -159,21 +184,6 @@ function cashClick() {
     //cash falling animation?
 }
 
-// function render1() {
-//     td1.style.background = 'url(' + slotState[0].imgUrl + ')';
-//     td1.style.backgroundSize = 'cover';
-// }
-
-// function render2() {
-//     td2.style.background = 'url(' + slotState[1].imgUrl + ')';
-//     td2.style.backgroundSize = 'cover';
-
-// }
-
-// function render3() {
-//     td3.style.background = 'url(' + slotState[2].imgUrl + ')';
-//     td3.style.backgroundSize = 'cover';
-// }
 
 function render() {
     console.log(slotState[0], slotState[1], slotState[2])
