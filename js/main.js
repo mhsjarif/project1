@@ -77,14 +77,14 @@ function initialize() {
     td1.style.background = 'url(' + defaultImg + ')';
     td2.style.background = 'url(' + defaultImg + ')';
     td3.style.background = 'url(' + defaultImg + ')';
-    backgroundMusic.volume = 0.05;
+    backgroundMusic.volume = 0.3;
 }
 
 function handleClick() {
     if (money >= 2) {
         money -= 2;
         pullingSound.play();
-        setTimeout(function() {
+        setTimeout(function () {
             slotSound.play();
         }, 300);
         for (var i = 0; i < 3; i++) {
@@ -107,22 +107,21 @@ function renderSlot(slotIdx, timeout) {
 
 function doFlashing(slots) {
     var timerIdArr = [];
-    for(i = 0; i < 3; i++) {
+    for (i = 0; i < 3; i++) {
         let ii = i;
-        timerIdArr.push(setInterval(function() {
-        var count = 0;
-        var startSlot = 0;
-        var slotIdx = getRandomBetween(startSlot, 2);
-        var symIdx = getRandomBetween(0, symArr.length - 1);
-        console.log(ii);
-        reels[ii].style.background = 'url(' + symArr[symIdx].imgUrl + ')';
-        reels[ii].style.backgroundSize = 'cover';
-    }, 70))
-}
+        timerIdArr.push(setInterval(function () {
+            var count = 0;
+            var startSlot = 0;
+            var slotIdx = getRandomBetween(startSlot, 2);
+            var symIdx = getRandomBetween(0, symArr.length - 1);
+            console.log(ii);
+            reels[ii].style.background = 'url(' + symArr[symIdx].imgUrl + ')';
+            reels[ii].style.backgroundSize = 'cover';
+        }, 70))
+    }
     console.log(arguments);
     var args = arguments[0];
     for (var i = 0; i <= 2; i++) {
-        // console.log(i)
         (function (idx) {
             setTimeout(function () {
                 clearInterval(timerIdArr[idx]);
@@ -141,12 +140,11 @@ function getRandomBetween(min, max) {
 }
 
 function cashClick() {
-    winAlert.textContent ='$' + money + ' cash MONEIZZZZZZZ for you dog!!';
+    winAlert.textContent = '$' + money + ' cash MONEIZZZZZZZ for you dog!!';
     money -= money;
     display.textContent = 'Balance: $' + money;
     moneySound.play();
 }
-
 
 function render() {
     console.log(slotState[0], slotState[1], slotState[2])
