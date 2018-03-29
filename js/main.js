@@ -69,7 +69,7 @@ function initialize() {
     td1.style.background = 'url(' + defaultImg + ')';
     td2.style.background = 'url(' + defaultImg + ')';
     td3.style.background = 'url(' + defaultImg + ')';
-    backgroundMusic.volume = 0.05;
+    backgroundMusic.volume = 0.05; 
 }
 
 function handleClick() {
