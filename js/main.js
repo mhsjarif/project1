@@ -22,7 +22,7 @@ var symArr = [
     {
         symbol: 'CAT',
         value: 3,
-        imgUrl: 'http://www.iconarchive.com/download/i78374/iconka/meow/cat-purr.ico'
+        imgUrl: 'https://www.iconarchive.com/download/i78374/iconka/meow/cat-purr.ico'
     },
     {
         symbol: 'DOG',
