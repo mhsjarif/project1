@@ -116,17 +116,20 @@ function doFlashing(a, b, c) {
         var slotIdx = getRandomBetween(startSlot, 2);
         var symIdx = getRandomBetween(0, symArr.length - 1);
         reels[0].style.background = 'url(' + symArr[symIdx].imgUrl + ')';
-    }, 10);
+        reels[0].style.backgroundSize = 'cover';
+    }, 70);
     var timerIdB = setInterval(function() {
         var slotIdx = getRandomBetween(startSlot, 2);
         var symIdx = getRandomBetween(0, symArr.length - 1);
         reels[1].style.background = 'url(' + symArr[symIdx].imgUrl + ')';
-    }, 10);
+        reels[1].style.backgroundSize = 'cover';
+    }, 70);
     var timerIdC = setInterval(function() {
         var slotIdx = getRandomBetween(startSlot, 2);
         var symIdx = getRandomBetween(0, symArr.length - 1);
         reels[2].style.background = 'url(' + symArr[symIdx].imgUrl + ')';
-    }, 10);
+        reels[2].style.backgroundSize = 'cover';
+    }, 70);
     setTimeout(function() {
         clearInterval(timerId);
         reels[0].style.background = 'url(' + a.imgUrl + ')';
