@@ -153,7 +153,7 @@ td {
     background-color: lightpink;
     height: 200px;
     width: 700px;
-    margin: 100px auto;
+    margin: 100px auto 20px auto;
     border-radius: 5px;
 }
 
@@ -228,6 +228,34 @@ h3 {
     border-radius: 10px;
     font-family: 'Patrick Hand SC';
     background-color: #f0fa99;
+}
+
+#reset {
+    width: 100px;
+    height: 30px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #6BD7C5;
+    border-radius: 5px;
+    box-shadow: 0 9px #999;
+    font-family: 'Patrick Hand SC';
+}
+
+#reset:hover {
+    background-color: #D2DA47;
+}
+
+#reset:active {
+    background-color: #D2DA47;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+#reset-div {
+    margin: 0 auto;
+    width: 300px;
+    text-align: center
 }
 
 audio {

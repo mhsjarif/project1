@@ -44,17 +44,20 @@ var symArr = [
 /*----- cached element references -----*/
 var playButton = document.getElementById('play');
 var cashOut = document.getElementById('cash');
+var resetButton = document.getElementById('reset');
 var display = document.getElementById('display');
 var winAlert = document.getElementById('winAlert');
 var td1 = document.getElementById('td1');
 var td2 = document.getElementById('td2');
 var td3 = document.getElementById('td3');
+var h4 = document.querySelector('h4');
 var backgroundMusic = document.getElementById('backgroundMusic');
 var defaultImg = 'https://image.flaticon.com/icons/svg/258/258349.svg';
 var reels = [td1, td2, td3];
 /*----- event listeners -----*/
 playButton.addEventListener('click', handleClick);
 cashOut.addEventListener('click', cashClick);
+resetButton.addEventListener('click', initialize);
 
 /*----- functions -----*/
 
@@ -68,6 +71,8 @@ function initialize() {
     td2.style.background = 'url(' + defaultImg + ')';
     td3.style.background = 'url(' + defaultImg + ')';
     backgroundMusic.volume = 0.3;
+    h4.textContent = '★·.·´¯`·.·★Only $2 to play!★·.·´¯`·.·★';
+    winAlert.textContent = "Try your luck!"
 }
 
 function handleClick() {
@@ -83,7 +88,7 @@ function handleClick() {
         }
         doFlashing(slotState);
     } else {
-        document.querySelector('h4').textContent = '★·.·´¯`·.·★Insufficent funds★·.·´¯`·.·★';
+        h4.textContent = '★·.·´¯`·.·★Insufficent funds★·.·´¯`·.·★';
         loserSound.play();
     }
 }
