@@ -72,6 +72,7 @@ initialize();
 
 function initialize() {
     page2.style.display = 'none';
+    page1.style.display = 'initial';
     slotState = [null, null, null];
     money = 10;
     display.textContent = 'Balance: $' + money;
@@ -102,7 +103,6 @@ function handleClick() {
     if (money >= 2) {
         money -= 2;
         playButton.disabled = true;
-        jackpotSound.pause();
         yaySound.pause();
         pullingSound.play();
         setTimeout(function () {
