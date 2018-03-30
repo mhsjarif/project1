@@ -76,6 +76,7 @@ function handleClick() {
     if (money >= 2) {
         money -= 2;
         playButton.disabled = true;
+        jackpotSound.pause();
         yaySound.pause();
         pullingSound.play();
         setTimeout(function () {
@@ -86,7 +87,7 @@ function handleClick() {
         }
         doFlashing(slotState);
     } else {
-        h4.textContent = '★·.·´¯`·.·★Insufficent funds★·.·´¯`·.·★';
+        winAlert.textContent = '(✿◕︿◕) Insufficent funds (◕︿◕✿)';
         loserSound.play();
     }
 }
@@ -144,6 +145,7 @@ function render() {
     if (slotState[0] === slotState[1] && slotState[1] === slotState[2]) {
         money += 4 * slotState[0].value;
         winAlert.textContent = 'you got a FULL ' + slotState[0].symbol + ' match!';
+        jackpotSound.currentTime = 0;
         jackpotSound.play();
     } else if (slotState[0] === slotState[1] || slotState[0] === slotState[2]) {
         money += 2 * slotState[0].value;
