@@ -316,5 +316,47 @@ audio {
 }
 
 footer{
-    margin: 40% auto 0;
+    margin: 25% auto 0;
+}
+
+#age-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+}
+
+#modal-content p {
+    font-family: 'Luckiest Guy', cursive;;
+    font-size: 36px;
+    margin: 30px;
+}
+
+#modal-content {
+    text-align: center;
+    background-color: #6BD7C5;
+    margin: 15% auto 0 auto;
+    padding: 20px;
+    border: 10px solid #D2DA47;
+    border-radius: 10px;
+    width: 400px;
+}
+
+#close-modal {
+    font-size: 30px;
+    text-align: right;
+    color: black;
+    float: right;
+    font-weight: bold;
+}
+
+#close-modal:hover,
+#close-modal:focus {
+    color:hotpink;
+    text-decoration: none;
+    cursor: pointer;
 }

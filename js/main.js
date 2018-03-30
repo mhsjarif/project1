@@ -49,6 +49,10 @@ var td2 = document.getElementById('td2');
 var td3 = document.getElementById('td3');
 var page1 = document.getElementById('page1');
 var page2 = document.getElementById('page2');
+var over21 = document.getElementById('over-21');
+var under21 = document.getElementById('under-21');
+var ageModal = document.getElementById('age-modal');
+var exitModalBox = document.getElementById('close-modal');
 var h4 = document.querySelector('h4');
 var backgroundMusic = document.getElementById('backgroundMusic');
 var defaultImg = 'https://image.flaticon.com/icons/svg/258/258349.svg';
@@ -58,6 +62,10 @@ var reels = [td1, td2, td3];
 playButton.addEventListener('click', handleClick);
 cashOut.addEventListener('click', cashClick);
 resetButton.addEventListener('click', initialize);
+over21.addEventListener('click', startGame);
+under21.addEventListener('click', openModal);
+exitModalBox.addEventListener('click', closeModal);
+
 
 /*----- functions -----*/
 initialize();
@@ -78,6 +86,16 @@ function initialize() {
 function startGame() {
     page2.style.display = 'initial';
     page1.style.display = 'none';
+    animeWowSound.play();
+}
+
+function openModal() {
+    ageModal.style.display = "block";
+    cryBabySound.play();
+}
+
+function closeModal() {
+    ageModal.style.display = "none";
 }
 
 function handleClick() {
@@ -143,7 +161,7 @@ function getRandomBetween(min, max) {
 }
 
 function cashClick() {
-    winAlert.textContent = '$' + money + ' cash MONEIZZZZZZZ for you dog!!';
+    winAlert.textContent = '$' + money + ' cash MONEIZZ for you dog!!';
     money -= money;
     display.textContent = 'Balance: $' + money;
     moneySound.play();
