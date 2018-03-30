@@ -99,6 +99,7 @@ function closeModal() {
     ageModal.style.display = "none";
 }
 
+/* Randomizes slot state and calls flashing */
 function handleClick() {
     if (money >= 2) {
         money -= 2;
@@ -118,30 +119,21 @@ function handleClick() {
     }
 }
 
-function renderSlot(slotIdx, timeout) {
-    setTimeout(function () {
-        reels[slotIdx].style.background = 'url(' + slotState[slotIdx].imgUrl + ')';
-        reels[slotIdx].style.backgroundSize = 'cover';
-        if (slotIdx === 2) render();
-    }, timeout);
-}
-
-function doFlashing(slots) {
+/* Handles visuals, timing, and calls render */
+function doFlashing(slotState) {
     var timerIdArr = [];
+    /* Fancy flashing in slot display */
     for (i = 0; i < 3; i++) {
         let ii = i;
         timerIdArr.push(setInterval(function () {
-            var count = 0;
-            var startSlot = 0;
-            var slotIdx = getRandomBetween(startSlot, 2);
             var symIdx = getRandomBetween(0, symArr.length - 1);
-            console.log(ii);
             reels[ii].style.background = 'url(' + symArr[symIdx].imgUrl + ')';
             reels[ii].style.backgroundSize = 'cover';
         }, 70))
     }
+    /* Stops flashing and sets image to the slot state each passing second */
     var args = arguments[0];
-    for (var i = 0; i <= 2; i++) {
+    for (var i = 0; i < 3; i++) {
         (function (idx) {
             setTimeout(function () {
                 clearInterval(timerIdArr[idx]);
@@ -159,14 +151,14 @@ function doFlashing(slots) {
 function getRandomBetween(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
+/* Cash out button click handler */
 function cashClick() {
     winAlert.textContent = '$' + money + ' cash MONEIZZ for you dog!!';
     money -= money;
     display.textContent = 'Balance: $' + money;
     moneySound.play();
 }
-
+/* Win logic and media, calculates money won/loss */
 function render() {
     if (slotState[0] === slotState[1] && slotState[1] === slotState[2]) {
         money += 4 * slotState[0].value;
