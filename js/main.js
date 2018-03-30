@@ -47,6 +47,8 @@ var winAlert = document.getElementById('winAlert');
 var td1 = document.getElementById('td1');
 var td2 = document.getElementById('td2');
 var td3 = document.getElementById('td3');
+var page1 = document.getElementById('page1');
+var page2 = document.getElementById('page2');
 var h4 = document.querySelector('h4');
 var backgroundMusic = document.getElementById('backgroundMusic');
 var defaultImg = 'https://image.flaticon.com/icons/svg/258/258349.svg';
@@ -61,6 +63,7 @@ resetButton.addEventListener('click', initialize);
 initialize();
 
 function initialize() {
+    page2.style.display = 'none';
     slotState = [null, null, null];
     money = 10;
     display.textContent = 'Balance: $' + money;
@@ -70,6 +73,11 @@ function initialize() {
     backgroundMusic.volume = 0.3;
     h4.textContent = '★·.·´¯`·.·★Only $2 to play!★·.·´¯`·.·★';
     winAlert.textContent = 'Try your luck!';
+}
+
+function startGame() {
+    page2.style.display = 'initial';
+    page1.style.display = 'none';
 }
 
 function handleClick() {

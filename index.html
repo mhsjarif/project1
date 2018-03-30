@@ -13,56 +13,70 @@
 </head>
 
 <body>
-    <h1>Slots 4 Tots</h1>
-    <div id='slot-machine'>
-        <h4>★·.·´¯`·.·★Only $2 to play!★·.·´¯`·.·★</h4>
-        <h5 id="winAlert">Try your luck!</h5>
-        <table id="slots">
-            <tr>
-                <td id="td1"></td>
-                <td id="td2"></td>
-                <td id="td3"></td>
-            </tr>
-        </table>
-        <div id="display"></div>
-        <button id="cash">cash out</button>
-        <button id="play">play</button>
-    </div>
-    <div id="rules">
-        <h3>Double = 2x &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FULL match = 4x</h3>
-        <table id="rules-display">
-            <tr>
-                <td class="name-tds">Popsicle</td>
-                <td class="name-tds">Ice Cream</td>
-                <td class="name-tds">Dog</td>
-                <td class="name-tds">Cat</td>
-                <td class="name-tds">Cool Cat</td>
-                <td class="name-tds">Unicorn</td>
-            </tr>
-            <tr>
-                <td class="icon-td" id="popsicle-td"></td>
-                <td class="icon-td" id="icecream-td"></td>
-                <td class="icon-td" id="dog-td"></td>
-                <td class="icon-td" id="cat-td"></td>
-                <td class="icon-td" id="coolcat-td"></td>
-                <td class="icon-td" id="unicorn-td"></td>
-            </tr>
-            <tr>
-                <td class="price-tds">$1</td>
-                <td class="price-tds">$2</td>
-                <td class="price-tds">$2</td>
-                <td class="price-tds">$3</td>
-                <td class="price-tds">$4</td>
-                <td class="price-tds">$10</td>
-            </tr>
-        </table>
-    </div>
-    <div id="reset-div">
-        <button id="reset">I'm a Tot.</button>
-    </div>
-    <audio id="backgroundMusic" controls autoplay loop>
-        <source src="./media/nyan-cat-remix.mp3" type="audio/mp3">
-    </audio>
+    <main id="page1">
+        <h1>Slots 4 Tots</h1>
+        <h5 id="must-be-21">(Must be over 21 to play)</h5>
+        <div id="question-age">
+            <h2 id="h2-over21">Are you over 21?</h2>
+            <button id="over-21">Yes</button>
+            <button id="under-21">No...</button>
+        </div>
+        <footer>
+            A silly slot machine by Tara Sjarif
+        </footer>
+    </main>
+    <main id="page2">
+        <h1>Slots 4 Tots</h1>
+        <div id='slot-machine'>
+            <h4>★·.·´¯`·.·★Only $2 to play!★·.·´¯`·.·★</h4>
+            <h5 id="winAlert">Try your luck!</h5>
+            <table id="slots">
+                <tr>
+                    <td id="td1"></td>
+                    <td id="td2"></td>
+                    <td id="td3"></td>
+                </tr>
+            </table>
+            <div id="display"></div>
+            <button id="cash">cash out</button>
+            <button id="play">play</button>
+        </div>
+        <div id="rules">
+            <h3>Double = 2x &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FULL match = 4x</h3>
+            <table id="rules-display">
+                <tr>
+                    <td class="name-tds">Popsicle</td>
+                    <td class="name-tds">Ice Cream</td>
+                    <td class="name-tds">Dog</td>
+                    <td class="name-tds">Cat</td>
+                    <td class="name-tds">Cool Cat</td>
+                    <td class="name-tds">Unicorn</td>
+                </tr>
+                <tr>
+                    <td class="icon-td" id="popsicle-td"></td>
+                    <td class="icon-td" id="icecream-td"></td>
+                    <td class="icon-td" id="dog-td"></td>
+                    <td class="icon-td" id="cat-td"></td>
+                    <td class="icon-td" id="coolcat-td"></td>
+                    <td class="icon-td" id="unicorn-td"></td>
+                </tr>
+                <tr>
+                    <td class="price-tds">$1</td>
+                    <td class="price-tds">$2</td>
+                    <td class="price-tds">$2</td>
+                    <td class="price-tds">$3</td>
+                    <td class="price-tds">$4</td>
+                    <td class="price-tds">$10</td>
+                </tr>
+            </table>
+        </div>
+        <div id="reset-div">
+            <button id="reset">I'm a Tot.</button>
+        </div>
+        <audio id="backgroundMusic" controls autoplay loop>
+            <source src="./media/nyan-cat-remix.mp3" type="audio/mp3">
+        </audio>
+    </main>
 </body>
 
 </html>
