@@ -4,10 +4,7 @@ var numFlashes = 50;
 var flashDuration = 70;
 
 /*----- app's state (variables) -----*/
-var slotState;
-var startSlot;
-var money;
-var display;
+var slotState, startSlot, money, display;
 var symArr = [
     {
         symbol: 'UNICORN',
@@ -54,13 +51,13 @@ var h4 = document.querySelector('h4');
 var backgroundMusic = document.getElementById('backgroundMusic');
 var defaultImg = 'https://image.flaticon.com/icons/svg/258/258349.svg';
 var reels = [td1, td2, td3];
+
 /*----- event listeners -----*/
 playButton.addEventListener('click', handleClick);
 cashOut.addEventListener('click', cashClick);
 resetButton.addEventListener('click', initialize);
 
 /*----- functions -----*/
-
 initialize();
 
 function initialize() {
@@ -72,12 +69,13 @@ function initialize() {
     td3.style.background = 'url(' + defaultImg + ')';
     backgroundMusic.volume = 0.3;
     h4.textContent = '★·.·´¯`·.·★Only $2 to play!★·.·´¯`·.·★';
-    winAlert.textContent = "Try your luck!"
+    winAlert.textContent = 'Try your luck!';
 }
 
 function handleClick() {
     if (money >= 2) {
         money -= 2;
+        playButton.disabled = true;
         yaySound.pause();
         pullingSound.play();
         setTimeout(function () {
@@ -115,7 +113,6 @@ function doFlashing(slots) {
             reels[ii].style.backgroundSize = 'cover';
         }, 70))
     }
-    console.log(arguments);
     var args = arguments[0];
     for (var i = 0; i <= 2; i++) {
         (function (idx) {
@@ -131,6 +128,7 @@ function doFlashing(slots) {
     }, 3000);
 }
 
+/* Randomize Function */
 function getRandomBetween(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -143,7 +141,6 @@ function cashClick() {
 }
 
 function render() {
-    console.log(slotState[0], slotState[1], slotState[2])
     if (slotState[0] === slotState[1] && slotState[1] === slotState[2]) {
         money += 4 * slotState[0].value;
         winAlert.textContent = 'you got a FULL ' + slotState[0].symbol + ' match!';
@@ -165,4 +162,5 @@ function render() {
         meowSound.play();
     }
     display.textContent = 'Balance: $' + money;
+    playButton.disabled = false;
 }
