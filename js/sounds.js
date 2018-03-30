@@ -7,3 +7,4 @@ var pullingSound = new Audio("./media/newPull.mp3");
 var yaySound = new Audio("./media/yay.mp3");
 var wowSound = new Audio("./media/wowPerfect.mp3")
     wowSound.volume = 1;
+var jackpotSound = new Audio("./media/oh-baby-a-triple.mp3");

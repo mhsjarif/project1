@@ -147,7 +147,7 @@ function render() {
     if (slotState[0] === slotState[1] && slotState[1] === slotState[2]) {
         money += 4 * slotState[0].value;
         winAlert.textContent = 'you got a FULL ' + slotState[0].symbol + ' match!';
-        wowSound.play();
+        jackpotSound.play();
     } else if (slotState[0] === slotState[1] || slotState[0] === slotState[2]) {
         money += 2 * slotState[0].value;
         winAlert.textContent = 'you got a double ' + slotState[0].symbol + ' match!';
